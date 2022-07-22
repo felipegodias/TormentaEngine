@@ -19,6 +19,24 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_msvc_build.yml">
+      <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_msvc_build.yml/badge.svg"/>
+  </a>
+  <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_clang_build.yml">
+      <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_clang_build.yml/badge.svg"/>
+  </a>
+  <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/linux_gcc_build.yml">
+      <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/linux_gcc_build.yml/badge.svg"/>
+  </a>
+  <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/linux_clang_build.yml">
+      <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/linux_clang_build.yml/badge.svg"/>
+  </a>
+  <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/mac_clang_build.yml">
+      <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/mac_clang_build.yml/badge.svg"/>
+  </a>
+</p>
+
 <div align="center">
 <img src="https://imgur.com/AUIYWVg.png" alt="Logo" width="128" height="130"/>
   <h1 align="center">Tormenta Engine</h1>
