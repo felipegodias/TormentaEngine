@@ -184,6 +184,7 @@
     {
       "name": "mac-clang-debug",
       "displayName": "Mac Clang Debug",
+      "hidden": false,
       "inherits": [
         "mac-clang-base"
       ],
@@ -194,6 +195,7 @@
     {
       "name": "mac-clang-release",
       "displayName": "Mac Clang Release",
+      "hidden": false,
       "inherits": [
         "mac-clang-base"
       ],
