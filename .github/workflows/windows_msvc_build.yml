@@ -1,0 +1,28 @@
+name: Windows MSVC Build
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Declare Git Variables
+        id: git_vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: CMake Config Debug
+        run: sudo cmake --preset windows-msvc-debug
+      - name: Cmake Build Debug
+        run: sudo cmake --build --preset windows-msvc-debug --target install
+      - name: CMake Config Release
+        run: sudo cmake --preset windows-msvc-release
+      - name: Cmake Build Release
+        run: sudo cmake --build --preset windows-msvc-release --target install
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: tormenta-windows-msvc-${{ steps.git_vars.outputs.sha_short }}
+            path: out/install
+            retention-days: 5
