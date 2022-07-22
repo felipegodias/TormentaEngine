@@ -13,15 +13,15 @@ jobs:
         id: git_vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Install dependencies
-        run: sudo bash ./install_mac_requirements.sh
+        run: bash ./install_mac_requirements.sh
       - name: CMake Config Debug
-        run: sudo cmake --preset mac-clang-debug
+        run: cmake --preset mac-clang-debug
       - name: Cmake Build Debug
-        run: sudo cmake --build --preset mac-clang-debug --target install
+        run: cmake --build --preset mac-clang-debug --target install
       - name: CMake Config Release
-        run: sudo cmake --preset mac-clang-release
+        run: cmake --preset mac-clang-release
       - name: Cmake Build Release
-        run: sudo cmake --build --preset mac-clang-release --target install
+        run: cmake --build --preset mac-clang-release --target install
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
