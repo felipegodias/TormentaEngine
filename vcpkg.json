@@ -1,0 +1,16 @@
+{
+  "name": "tormenta",
+  "version": "0.0.1",
+  "builtin-baseline": "e8bbe813151e45077fa70887b1f87ccce514701a",
+  "dependencies": [
+    {
+      "name": "argparse"
+    }
+  ],
+  "overrides": [
+    {
+      "name": "argparse",
+      "version": "2.2"
+    }
+  ]
+}
