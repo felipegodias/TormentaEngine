@@ -20,6 +20,12 @@
 </p>
 
 <p align="center">
+    <a href="https://www.codacy.com/gh/felipegodias/TormentaEngine/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=felipegodias/TormentaEngine&amp;utm_campaign=Badge_Grade">
+        <img src="https://app.codacy.com/project/badge/Grade/af2f347264344c658b47d2eba05dd33c"/>
+    </a>
+</p>
+
+<p align="center">
     <a href="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_msvc_build.yml">
         <img src="https://github.com/felipegodias/TormentaEngine/actions/workflows/windows_msvc_build.yml/badge.svg"/>
     </a>
@@ -52,17 +58,17 @@
 All third party libraries will be installed automatically via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
 
 ### Windows
-* MSVC 19 or Clang 10
-* Ninja
+  * MSVC 19 or Clang 10
+  * Ninja
 ### Linux
-* GCC 9 or Clang 10
-* Ninja
+  * GCC 9 or Clang 10
+  * Ninja
 ```
 > sudo ./instal_linux_requirements.sh
 ```
 ### MacOS
-* Apple Clang 10
-* Ninja
+  * Apple Clang 10
+  * Ninja
 ```
 > ./instal_mac_requirements.sh
 ```
@@ -71,17 +77,17 @@ All third party libraries will be installed automatically via <a href="https://g
 Use one of the following presets along with CMake.
 
 ### Presets
-* Windows
+  * Windows
     * windows-msvc-debug
     * windows-msvc-release
     * windows-clang-debug
     * windows-clang-release
-* Linux
+  * Linux
     * linux-gcc-debug
     * linux-gcc-release
     * linux-clang-debug
     * linux-clang-release
-* MacOS
+  * MacOS
     * mac-clang-debug
     * mac-clang-release
 
