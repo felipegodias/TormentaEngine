@@ -49,7 +49,7 @@
 </div>
 
 ## Requirements
-All third party libraries all installed via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
+All third party libraries will be installed automatically via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
 
 ### Windows
 * MSVC 19 or Clang 10
