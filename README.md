@@ -55,43 +55,51 @@
 </div>
 
 ## Requirements
+
 All third party libraries will be installed automatically via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
 
 ### Windows
-  * MSVC 19 or Clang 10
-  * Ninja
+
+-   MSVC 19 or Clang 10
+-   Ninja
+
 ### Linux
-  * GCC 9 or Clang 10
-  * Ninja
+
+-   GCC 9 or Clang 10
+-   Ninja
 
 ```bash
 sudo ./instal_linux_requirements.sh
 ```
+
 ### MacOS
-  * Apple Clang 10
-  * Ninja
+
+-   Apple Clang 10
+-   Ninja
 
 ```bash
 ./instal_mac_requirements.sh
 ```
 
 ## How to Build
+
 Use one of the following presets along with CMake.
 
 ### Presets
-  * Windows
-    * windows-msvc-debug
-    * windows-msvc-release
-    * windows-clang-debug
-    * windows-clang-release
-  * Linux
-    * linux-gcc-debug
-    * linux-gcc-release
-    * linux-clang-debug
-    * linux-clang-release
-  * MacOS
-    * mac-clang-debug
-    * mac-clang-release
+
+-   Windows
+    -   windows-msvc-debug
+    -   windows-msvc-release
+    -   windows-clang-debug
+    -   windows-clang-release
+-   Linux
+    -   linux-gcc-debug
+    -   linux-gcc-release
+    -   linux-clang-debug
+    -   linux-clang-release
+-   MacOS
+    -   mac-clang-debug
+    -   mac-clang-release
 
 ```bash
 cmake --preset windows-msvc-debug
@@ -99,12 +107,15 @@ cmake --build --preset windows-msvc-debug --target install
 ```
 
 <!-- LICENSE -->
+
 ## License
+
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
+
 ## Contact
 
 Felipe Dias - [@felipegodias](https://twitter.com/felipegodias) - felipe.g.o.dias@outlook.com
 
-Project Link: [https://github.com/felipegodias/TormentaEngine](https://github.com/felipegodias/TormentaEngine)
+Project Link: <https://github.com/felipegodias/TormentaEngine>
