@@ -13,18 +13,18 @@ jobs:
         id: git_vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Install dependencies
-        run: sudo bash ./install_linux_requirements.sh
+        run: bash ./install_linux_requirements.sh
       - name: CMake Config Debug
-        run: sudo cmake --preset linux-clang-debug
+        run: cmake --preset linux-clang-debug
       - name: Cmake Build Debug
-        run: sudo cmake --build --preset linux-clang-debug --target install
+        run: cmake --build --preset linux-clang-debug --target install
       - name: CMake Config Release
-        run: sudo cmake --preset linux-clang-release
+        run: cmake --preset linux-clang-release
       - name: Cmake Build Release
-        run: sudo cmake --build --preset linux-clang-release --target install
+        run: cmake --build --preset linux-clang-release --target install
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-            name: tormenta-linux-clang-${{ steps.git_vars.outputs.sha_short }}
-            path: out/install
-            retention-days: 5
+          name: tormenta-linux-clang-${{ steps.git_vars.outputs.sha_short }}
+          path: out/install
+          retention-days: 5
