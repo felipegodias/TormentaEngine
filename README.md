@@ -63,14 +63,16 @@ All third party libraries will be installed automatically via <a href="https://g
 ### Linux
   * GCC 9 or Clang 10
   * Ninja
-```
-> sudo ./instal_linux_requirements.sh
+
+```bash
+sudo ./instal_linux_requirements.sh
 ```
 ### MacOS
   * Apple Clang 10
   * Ninja
-```
-> ./instal_mac_requirements.sh
+
+```bash
+./instal_mac_requirements.sh
 ```
 
 ## How to Build
@@ -91,9 +93,9 @@ Use one of the following presets along with CMake.
     * mac-clang-debug
     * mac-clang-release
 
-```
-> cmake --preset windows-msvc-debug
-> cmake --build --preset windows-msvc-debug --target install
+```bash
+cmake --preset windows-msvc-debug
+cmake --build --preset windows-msvc-debug --target install
 ```
 
 <!-- LICENSE -->
