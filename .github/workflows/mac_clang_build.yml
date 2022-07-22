@@ -25,6 +25,6 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-            name: tormenta-mac-clang-${{ steps.git_vars.outputs.sha_short }}
-            path: out/install
-            retention-days: 5
+          name: tormenta-mac-clang-${{ steps.git_vars.outputs.sha_short }}
+          path: out/install
+          retention-days: 5
