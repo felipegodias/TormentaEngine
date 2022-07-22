@@ -48,7 +48,47 @@
     <h1 align="center">Tormenta Engine</h1>
 </div>
 
-<br/>
+## Requirements
+All third party libraries all installed via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
+
+### Windows
+* MSVC 19 or Clang 10
+* Ninja
+### Linux
+* GCC 9 or Clang 10
+* Ninja
+```
+> sudo ./instal_linux_requirements.sh
+```
+### MacOS
+* Apple Clang 10
+* Ninja
+```
+> ./instal_mac_requirements.sh
+```
+
+## How to Build
+Use one of the following presets along with CMake.
+
+### Presets
+* Windows
+    * windows-msvc-debug
+    * windows-msvc-release
+    * windows-clang-debug
+    * windows-clang-release
+* Linux
+    * linux-gcc-debug
+    * linux-gcc-release
+    * linux-clang-debug
+    * linux-clang-release
+* MacOS
+    * mac-clang-debug
+    * mac-clang-release
+
+```
+> cmake --preset windows-msvc-debug
+> cmake --build --preset windows-msvc-debug --target install
+```
 
 <!-- LICENSE -->
 ## License
