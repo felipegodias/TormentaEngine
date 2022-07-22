@@ -12,6 +12,10 @@ jobs:
       - name: Declare Git Variables
         id: git_vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Setup Microsoft build
+        uses: microsoft/setup-msbuild@v1.0.3
+      - name: Setup MSVC development tools
+        uses: ilammy/msvc-dev-cmd@v1
       - name: CMake Config Debug
         run: cmake --preset windows-msvc-debug
       - name: Cmake Build Debug
