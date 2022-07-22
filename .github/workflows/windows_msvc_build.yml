@@ -13,13 +13,13 @@ jobs:
         id: git_vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: CMake Config Debug
-        run: sudo cmake --preset windows-msvc-debug
+        run: cmake --preset windows-msvc-debug
       - name: Cmake Build Debug
-        run: sudo cmake --build --preset windows-msvc-debug --target install
+        run: cmake --build --preset windows-msvc-debug --target install
       - name: CMake Config Release
-        run: sudo cmake --preset windows-msvc-release
+        run: cmake --preset windows-msvc-release
       - name: Cmake Build Release
-        run: sudo cmake --build --preset windows-msvc-release --target install
+        run: cmake --build --preset windows-msvc-release --target install
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
