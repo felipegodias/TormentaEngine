@@ -27,3 +27,4 @@ jobs:
         with:
             name: tormenta-linux-clang-${{ steps.git_vars.outputs.sha_short }}
             path: out/install
+            retention-days: 5
