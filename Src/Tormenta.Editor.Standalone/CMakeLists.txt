@@ -3,7 +3,7 @@ add_executable(Tormenta.Editor.Standalone
 )
 
 target_link_libraries(Tormenta.Editor.Standalone PRIVATE 
-    Tormenta.Core
+    Tormenta
     argparse::argparse
 )
 
