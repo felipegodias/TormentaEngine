@@ -92,11 +92,13 @@ Use one of the following presets along with CMake.
     -   windows-msvc-release
     -   windows-clang-debug
     -   windows-clang-release
+
 -   Linux
     -   linux-gcc-debug
     -   linux-gcc-release
     -   linux-clang-debug
     -   linux-clang-release
+
 -   MacOS
     -   mac-clang-debug
     -   mac-clang-release
