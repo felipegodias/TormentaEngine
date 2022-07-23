@@ -5,12 +5,19 @@
   "dependencies": [
     {
       "name": "argparse"
+    },
+    {
+      "name":  "fmt" 
     }
   ],
   "overrides": [
     {
       "name": "argparse",
       "version": "2.2"
+    },
+    {
+      "name": "fmt",
+      "version": "8.1.1"
     }
   ]
 }
