@@ -21,7 +21,7 @@ namespace Tormenta
 			MPAllocator() noexcept = default;
 
 			template <class RebindTy>
-			MPAllocator(const MPAllocator<RebindTy>&) noexcept
+			explicit MPAllocator(const MPAllocator<RebindTy>&) noexcept
 			{
 			}
 
