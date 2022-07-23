@@ -4,7 +4,7 @@ set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/vcpkg/scripts/b
   CACHE STRING "Vcpkg toolchain file")
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -16,6 +16,26 @@ project(Tormenta
 )
 
 message("Using compiler '${CMAKE_CXX_COMPILER_ID}' version '${CMAKE_CXX_COMPILER_VERSION}'")
+
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "10.0.0")
+        message(FATAL_ERROR "Insufficient GCC version. Minimum Required is 10.0.0!")
+    endif()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "19.0.0.0")
+        message(FATAL_ERROR "Insufficient MSVC version. Minimum required is 19.0.0.0!")
+    endif()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "10.0.0")
+        message(FATAL_ERROR "Insufficient Clang version. Minimum required is 10.0.0!")
+    endif()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "10.0.0")
+        message(FATAL_ERROR "Insufficient AppleClang version. Minimum required is 10.0.0!")
+    endif()
+else()
+    message(FATAL_ERROR "Compiler not supported!")
+endif()
 
 set(MSVC_COMPILER_OPTIONS /wd4251 /wd4275 /W4 /WX /permissive-)
 set(GCC_COMPILER_OPTIONS -Wall -Wextra -Werror)
