@@ -1,4 +1,4 @@
-add_executable(Tormenta.Editor.Standalone 
+add_executable(Tormenta.Editor.Standalone
     "Main.cpp"
 )
 
