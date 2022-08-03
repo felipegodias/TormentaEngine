@@ -17,29 +17,21 @@ project(Tormenta
 
 message("Using compiler '${CMAKE_CXX_COMPILER_ID}' version '${CMAKE_CXX_COMPILER_VERSION}'")
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "7.0")
-        message(FATAL_ERROR "Insufficient GCC version. Minimum Required is 7.0!")
-    endif()
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "19.14")
-        message(FATAL_ERROR "Insufficient MSVC version. Minimum required is 19.14!")
-    endif()
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "6.0")
-        message(FATAL_ERROR "Insufficient Clang version. Minimum required is 6!")
-    endif()
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
-    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "10.0")
-        message(FATAL_ERROR "Insufficient AppleClang version. Minimum required is 10.0!")
-    endif()
-else()
-    message(FATAL_ERROR "Compiler not supported!")
+set(GNU_MIN_VERSION "7.0")
+set(MSVC_MIN_VERSION "19.14")
+set(Clang_MIN_VERSION "6.0")
+set(AppleClang_MIN_VERSION "10.0")
+
+if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${${CMAKE_CXX_COMPILER_ID}_MIN_VERSION})
+    message(FATAL_ERROR "Insufficient ${CMAKE_CXX_COMPILER_ID} version. Minimum Required is ${${CMAKE_CXX_COMPILER_ID}_MIN_VERSION}!")
 endif()
 
 set(MSVC_COMPILER_OPTIONS /W4 /WX /permissive-)
 set(GCC_COMPILER_OPTIONS -Wall -Wextra -Werror)
-add_compile_options("$<IF:$<CXX_COMPILER_ID:MSVC>,${MSVC_COMPILER_OPTIONS},${GCC_COMPILER_OPTIONS}>")
+set(Clang_COMPILER_OPTIONS -Wall -Wextra -Werror)
+set(AppleClang_COMPILER_OPTIONS -Wall -Wextra -Werror)
+
+add_compile_options(${${CMAKE_CXX_COMPILER_ID}_COMPILER_OPTIONS})
 
 include("ThirdParty/vcpkg.cmake")
 
