@@ -37,7 +37,7 @@ else()
     message(FATAL_ERROR "Compiler not supported!")
 endif()
 
-set(MSVC_COMPILER_OPTIONS /wd4251 /wd4275 /W4 /WX /permissive-)
+set(MSVC_COMPILER_OPTIONS /W4 /WX /permissive-)
 set(GCC_COMPILER_OPTIONS -Wall -Wextra -Werror)
 add_compile_options("$<IF:$<CXX_COMPILER_ID:MSVC>,${MSVC_COMPILER_OPTIONS},${GCC_COMPILER_OPTIONS}>")
 
