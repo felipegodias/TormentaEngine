@@ -4,7 +4,8 @@
   "builtin-baseline": "7122b744575254e989228d3a507a6e4ccca9e1b2",
   "dependencies": [
     {
-      "name": "argparse"
+      "name": "argparse",
+      "version>=": "2.2"
     },
     {
       "name":  "fmt"
