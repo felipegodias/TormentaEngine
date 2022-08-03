@@ -24,7 +24,8 @@ jobs:
         run: cmake --build --preset linux-clang-release --target install
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: tormenta-linux-clang-${{ steps.git_vars.outputs.sha_short }}
-          path: out/install
+          path: out
           retention-days: 5
