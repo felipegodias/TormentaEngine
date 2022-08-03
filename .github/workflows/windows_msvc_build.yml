@@ -16,10 +16,6 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.3
       - name: Setup MSVC development tools
         uses: ilammy/msvc-dev-cmd@v1
-      - name: Setup VCPKG
-        uses: lukka/run-vcpkg@v10
-        with:
-          vcpkgDirectory: ${{ github.workspace }}/ThirdParty/vcpkg
       - name: CMake Config Debug
         run: cmake --preset windows-msvc-debug
       - name: Cmake Build Debug
