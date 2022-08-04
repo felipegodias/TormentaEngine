@@ -58,30 +58,19 @@
 
 All third party libraries will be installed automatically via <a href="https://github.com/microsoft/vcpkg">vcpkg</a>.
 
-### Windows
+### Supported Toolchains
 
--   MSVC 19 or Clang 10
--   Ninja
-
-### Linux
-
--   GCC 9 or Clang 10
--   Ninja
-
-```bash
-sudo ./instal_linux_requirements.sh
-```
-
-### MacOS
-
--   Apple Clang 10
--   Ninja
-
-```bash
-./instal_mac_requirements.sh
-```
+| Compiler      | Generator | Standard Library | Test Environment   |
+| :------------ | :-------- | :--------------- | :----------------- |
+| GCC >= 7.0    | Ninja     | libstdc++        | Ubuntu 20.04       |
+| Clang >= 6.0  | Ninja     | libc++           | Xcode 13.4.1       |
+| MSVC >= 19.14 | Ninja     | Microsoft STL    | Visual Studio 2022 |
 
 ## How to Build
+
+```bash
+git clone --recurse-submodules git@github.com:felipegodias/TormentaEngine.git
+```
 
 Use one of the following presets along with CMake.
 
