@@ -10,8 +10,7 @@ namespace Tormenta
     template <typename Ty>
     using UniquePtr = std::unique_ptr<Ty, std::function<void(void*)>>;
 
-    template <typename Ty, typename ... Args>
-        requires std::is_constructible_v<Ty, Args...>
+    template <typename Ty, typename ... Args, std::enable_if_t<std::is_constructible_v<Ty, Args...>, int> = 0>
     UniquePtr<Ty> MakeUnique(Args&& ... args)
     {
         static Allocator<Ty> allocator;
