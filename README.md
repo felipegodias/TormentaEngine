@@ -50,7 +50,7 @@
 </p>
 
 <div align="center">
-    <img src="https://imgur.com/AUIYWVg.png" alt="Logo" width="128" height="130"/>
+    <img src="https://media.githubusercontent.com/media/felipegodias/TormentaEngine/master/Resources/logo.png" alt="Logo" width="128" height="128"/>
     <h1 align="center">Tormenta Engine</h1>
 </div>
 
