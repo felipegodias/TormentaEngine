@@ -1,4 +1,13 @@
-add_library(Tormenta STATIC "Tormenta.cpp")
+add_library(Tormenta STATIC 
+	"Src/Containers/String.cpp"
+	"Src/Containers/UnorderedMap.cpp"
+	"Src/Containers/UnorderedSet.cpp"
+	"Src/Memory/FreeListAllocator.cpp"
+	"Src/Memory/MallocAllocator.cpp"
+	"Src/Memory/StlAllocator.cpp"
+	"Src/Memory/TrackerAllocator.cpp"
+	"Src/Tormenta.cpp"
+)
 
 target_compile_definitions(Tormenta PRIVATE TORMENTA_EXPORTS)
 
@@ -10,6 +19,3 @@ target_include_directories(Tormenta PUBLIC
 )
 
 target_link_libraries(Tormenta PRIVATE fmt::fmt)
-
-add_subdirectory("Memory")
-add_subdirectory("String")

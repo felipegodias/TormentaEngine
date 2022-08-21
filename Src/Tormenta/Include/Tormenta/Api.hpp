@@ -1,19 +1,27 @@
 #pragma once
+#ifndef TORMENTA_API_HPP
+#define TORMENTA_API_HPP
 
 #ifdef _WIN32
 
+#define TORMENTA_DLL_EXPORT __declspec(dllexport)
+#define TORMENTA_DLL_IMPORT __declspec(dllimport)
+
+#else //_WIN32
+
+#define TORMENTA_DLL_EXPORT
+#define TORMENTA_DLL_IMPORT
+
+#endif //_WIN32
+
 #ifdef TORMENTA_EXPORTS
 
-#define TORMENTA_API __declspec(dllexport)
+#define TORMENTA_API TORMENTA_DLL_EXPORT
 
-#else
+#else //TORMENTA_EXPORTS
 
-#define TORMENTA_API __declspec(dllimport)
+#define TORMENTA_API TORMENTA_DLL_IMPORT
 
-#endif
+#endif //TORMENTA_EXPORTS
 
-#else
-
-#define TORMENTA_API
-
-#endif
+#endif //TORMENTA_API_HPP

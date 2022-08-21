@@ -1,5 +1,5 @@
 add_executable(Tormenta.Editor.Standalone
-    "Main.cpp"
+    "Src/Main.cpp"
 )
 
 target_link_libraries(Tormenta.Editor.Standalone PRIVATE 

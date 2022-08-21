@@ -4,12 +4,12 @@
 #include <fmt/format.h>
 
 #include "Tormenta/Api.hpp"
-#include "Tormenta/Memory/Allocator.hpp"
+#include "Tormenta/Memory/StlAllocator.hpp"
 
 namespace Tormenta
 {
 	template <typename Ty>
-	using BasicString = std::basic_string<Ty, std::char_traits<Ty>, Allocator<Ty>>;
+	using BasicString = std::basic_string<Ty, std::char_traits<Ty>, StlAllocator<Ty>>;
 
 	using String = BasicString<char>;
 	using WString = BasicString<wchar_t>;
@@ -20,7 +20,7 @@ namespace Tormenta
 	using StringView = BasicStringView<char>;
 	using WStringView = BasicStringView<wchar_t>;
 
-	TORMENTA_API [[nodiscard]] String FormatArgs(String::allocator_type alloc, StringView fmt, fmt::format_args args);
+	[[nodiscard]] TORMENTA_API String FormatArgs(String::allocator_type alloc, StringView fmt, fmt::format_args args);
 
 	template <typename ...Args>
 	String Format(const StringView fmt, const Args& ... args)
