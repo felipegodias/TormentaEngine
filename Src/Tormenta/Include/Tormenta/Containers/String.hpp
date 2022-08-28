@@ -4,7 +4,7 @@
 #include <fmt/format.h>
 
 #include "Tormenta/Api.hpp"
-#include "Tormenta/Memory/StlAllocator.hpp"
+#include "Tormenta/Memory/Allocators/StlAllocator.hpp"
 
 namespace Tormenta
 {

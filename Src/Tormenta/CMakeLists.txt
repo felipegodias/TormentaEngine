@@ -2,10 +2,10 @@ add_library(Tormenta STATIC
 	"Src/Containers/String.cpp"
 	"Src/Containers/UnorderedMap.cpp"
 	"Src/Containers/UnorderedSet.cpp"
-	"Src/Memory/FreeListAllocator.cpp"
-	"Src/Memory/MallocAllocator.cpp"
-	"Src/Memory/StlAllocator.cpp"
-	"Src/Memory/TrackerAllocator.cpp"
+	"Src/Memory/Allocators/FreeListAllocator.cpp"
+	"Src/Memory/Allocators/MallocAllocator.cpp"
+	"Src/Memory/Allocators/StlAllocator.cpp"
+	"Src/Memory/Allocators/TrackerAllocator.cpp"
 	"Src/Tormenta.cpp"
 )
 

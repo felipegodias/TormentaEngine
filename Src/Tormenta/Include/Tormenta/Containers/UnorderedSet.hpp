@@ -1,7 +1,7 @@
 #ifndef TORMENTA_UNORDERED_SET_HPP
 #define TORMENTA_UNORDERED_SET_HPP
 
-#include "Tormenta/Memory/StlAllocator.hpp"
+#include "Tormenta/Memory/Allocators/StlAllocator.hpp"
 
 #include <unordered_set>
 

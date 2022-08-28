@@ -1,4 +1,4 @@
-#include "Tormenta/Memory/MallocAllocator.hpp"
+#include "Tormenta/Memory/Allocators/MallocAllocator.hpp"
 
 #include <cstdlib>
 
