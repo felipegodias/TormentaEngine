@@ -29,8 +29,24 @@ set(MSVC_COMPILER_OPTIONS /W4 /WX /permissive-)
 set(GCC_COMPILER_OPTIONS -Wall -Wextra -Werror)
 set(Clang_COMPILER_OPTIONS -Wall -Wextra -Werror)
 set(AppleClang_COMPILER_OPTIONS -Wall -Wextra -Werror)
+set(COMPILER_OPTIONS ${${CMAKE_CXX_COMPILER_ID}_COMPILER_OPTIONS})
 
-add_compile_options(${${CMAKE_CXX_COMPILER_ID}_COMPILER_OPTIONS})
+add_compile_options(${COMPILER_OPTIONS})
+
+set(ENABLE_CLANG_TIDY ON CACHE STRING "Enable clang tidy")
+if (ENABLE_CLANG_TIDY)
+    message("Enabling clang tidy...")
+    find_program(CLANG_TIDY clang-tidy)
+    if (CLANG_TIDY)
+        # Manually passing the /EHsc to clang-tidy due to a bug when the argument is passed after -- argument.
+        # For more information look at: https://gitlab.kitware.com/cmake/cmake/-/issues/20512
+        set(MSVC_CLANG_TIDY_EXTRA_ARGS /EHsc)
+        set(CLANG_TIDY_EXTRA_ARGS ${${CMAKE_CXX_COMPILER_ID}_CLANG_TIDY_EXTRA_ARGS})
+        set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY};--extra-arg=${CLANG_TIDY_EXTRA_ARGS})
+    else()
+        message(FATAL_ERROR "Could not found the exectutable for clang-tidy installed on the machine!")
+    endif()
+endif()
 
 include("ThirdParty/vcpkg.cmake")
 
